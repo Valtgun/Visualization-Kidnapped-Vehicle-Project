@@ -41,12 +41,18 @@ struct LandmarkObs {
 	int id;				// Id of matching landmark in the map.
 	double x;			// Local (vehicle coordinates) x position of landmark observation [m]
 	double y;			// Local (vehicle coordinates) y position of landmark observation [m]
-    
+
     // Add sorting operator
-    bool operator < (const LandmarkObs& other) const 
+    bool operator < (const LandmarkObs& other) const
     {
 		return (sqrt(x*x + y*y) < sqrt(other.x*other.x + other.y*other.y));
 	}
+};
+
+struct Particle {
+	double x;
+	double y;
+	double theta;
 };
 
 /*
@@ -234,6 +240,49 @@ inline bool read_landmark_data(std::string filename, std::vector<LandmarkObs>& o
 
 		// Add to list of control measurements:
 		observations.push_back(meas);
+	}
+	return true;
+}
+
+/* Reads map data from a file.
+ * @param filename Name of file containing map data.
+ * @output True if opening and reading file was successful
+ */
+inline bool read_particle_data(std::string filename, std::vector<Particle>& particles) {
+
+	// Get file of map:
+	std::ifstream in_file_map(filename.c_str(),std::ifstream::in);
+	// Return if we can't open the file.
+	if (!in_file_map) {
+		return false;
+	}
+
+	// Declare single line of map file:
+	std::string line_map;
+
+	// Run over each single line:
+	while(getline(in_file_map, line_map)){
+
+		std::istringstream iss_map(line_map);
+
+		// Declare landmark values and ID:
+		float part_x, part_y, part_th;
+
+		// Read data from current line to values::
+		iss_map >> part_x;
+		iss_map >> part_y;
+		iss_map >> part_th;
+
+		// Declare single_landmark:
+		Particle particle_temp;
+
+		// Set values
+		particle_temp.x = part_x;
+		particle_temp.y  = part_y;
+		particle_temp.theta  = part_th;
+
+		// Add to landmark list of map:
+		particles.push_back(particle_temp);
 	}
 	return true;
 }

@@ -5,4 +5,4 @@
 #
 
 # Run particle filter
-./build/vis_particle_filter
+./build/VisualizeParticleFilter
