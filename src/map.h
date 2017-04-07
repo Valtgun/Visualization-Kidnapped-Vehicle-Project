@@ -1,4 +1,4 @@
-/*
+/* Code from: https://github.com/udacity/CarND-Kidnapped-Vehicle-Project
  * map.h
  *
  *  Created on: Dec 12, 2016
@@ -10,7 +10,7 @@
 
 class Map {
 public:
-	
+
 	struct single_landmark_s{
 
 		int id_i ; // Landmark ID

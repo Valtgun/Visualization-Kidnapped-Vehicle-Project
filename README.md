@@ -1,5 +1,8 @@
 # Visualization-Kidnapped-Vehicle-Project
 Vizualization for CarND-Kidnapped-Vehicle-Project
+https://github.com/udacity/CarND-Kidnapped-Vehicle-Project
+
+Requires OpenCV if compilation is done from source.
 
 # How to use it
 Download executable VisualizeParticleFilter from https://github.com/Valtgun/Visualization-Kidnapped-Vehicle-Project
@@ -28,3 +31,11 @@ pf.write(filename.str());
 
 // before line below
 pf.updateWeights(sensor_range, sigma_landmark, noisy_observations, map);
+
+/_
+# Sample screenshots
+Map of landmarks:
+![Map of landmarks](Map_landmarks_path.png)
+
+Zoomed in view of particles around location:
+![Particles](Particles.png)

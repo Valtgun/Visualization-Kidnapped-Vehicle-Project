@@ -1,4 +1,5 @@
 #!/bin/bash
+# Original at: https://github.com/udacity/CarND-Kidnapped-Vehicle-Project
 # Script to build all components from scratch, using the maximum available CPU power
 #
 # Given parameters are passed over to CMake.

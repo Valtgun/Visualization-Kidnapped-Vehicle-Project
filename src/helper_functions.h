@@ -1,4 +1,4 @@
-/*
+/* Code from: https://github.com/udacity/CarND-Kidnapped-Vehicle-Project
  * helper_functions.h
  * Some helper functions for the 2D particle filter.
  *  Created on: Dec 13, 2016

@@ -1,5 +1,5 @@
-/* Part of funcitons from Udacity Github repo:
- *
+/* Funcitons for reading from files from Udacity Github repo:
+ * https://github.com/udacity/CarND-Kidnapped-Vehicle-Project
  *
  *
  *

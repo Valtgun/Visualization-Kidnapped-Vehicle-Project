@@ -1,4 +1,5 @@
 #!/bin/bash
+# Original at: https://github.com/udacity/CarND-Kidnapped-Vehicle-Project
 # Script to clean the tree from all compiled files.
 # You can rebuild them afterwards using "build.sh".
 #
